@@ -1,0 +1,30 @@
+--Create a grocery store database
+CREATE TABLE my_store (id INTEGER PRIMARY KEY, name TEXT, type TEXT, quantity INTEGER, price INTEGER);
+
+INSERT INTO my_store VALUES (1, "Business Class", "Collared Shirt", 34, 24.99);
+INSERT INTO my_store VALUES (2, "Business Class", "Pant", 26, 38.99);
+INSERT INTO my_store VALUES (3, "Business Class", "Dress", 17, 54.97);
+INSERT INTO my_store VALUES (4, "Casual", "Joggers", 21, 28.98);
+INSERT INTO my_store VALUES (5, "Casual", "Leggings", 50, 20.11);
+INSERT INTO my_store VALUES (6, "Casual", "Graphic Tee", 31, 29.56);
+INSERT INTO my_store VALUES (7, "Casual", "Sweatshirt", 14, 29.99);
+INSERT INTO my_store VALUES (8, "Cold Weather", "Tucker Jacket", 32, 46.99);
+INSERT INTO my_store VALUES (9, "Cold Weather", "Trench Coat", 17, 56.99);
+INSERT INTO my_store VALUES (10, "Cold Weather", "Beannie", 21, 16.98);
+INSERT INTO my_store VALUES (11, "Cold Weather", "Wool Socks", 20, 14.99);
+INSERT INTO my_store VALUES (12, "Cold Weather", "Gloves", 37, 9.99);
+INSERT INTO my_store VALUES (13, "Warm Weather", "Summer Dress", 46, 55.69);
+INSERT INTO my_store VALUES (14, "Warm Weather", "Tank Top", 23, 11.98);
+INSERT INTO my_store VALUES (15, "Warm Weather", "Slip-On Sandals", 28, 35.99);
+
+--display the database ordered by price in descending order 
+SELECT * FROM my_store ORDER BY price desc; 
+
+--what is the total price off all items?
+SELECT SUM (price) FROM my_store;
+
+--what items are less than $30?
+SELECT * FROM my_store WHERE price <30 ORDER BY price;
+
+--identify which items may need to be re-ordered based on quantity
+SELECT * FROM my_store ORDER BY quantity;
